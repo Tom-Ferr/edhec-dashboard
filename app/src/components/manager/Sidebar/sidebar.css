@@ -1,0 +1,419 @@
+/* Sidebar Container */
+.sidebar-container {
+    height: 100vh;
+    font-family: 'DejaVu Sans', sans-serif;
+    position: relative;
+  }
+  
+  /* Background Rectangle */
+  .sidebar-background {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(249 250 251);
+    position: relative;
+    overflow: visible;
+  }
+  
+  /* Pink Sidebar Rectangle */
+  .pink-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--pink-bg) 0%, var(--pink-light) 100%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+  }
+  
+  /* Curved Corner */
+  .curved-corner-container {
+    position: absolute;
+    top: 0;
+    width: 120%;
+    height: 14rem;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .curved-corner-svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Transparent Content Box */
+  .sidebar-content {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    flex: 1;
+  }
+  
+  /* Navigation Styles */
+  .sidebar-nav {
+    padding-top: 5rem;
+    padding: 0.75rem;
+    flex: 1;
+  }
+  
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  /* Navigation Item */
+  .nav-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: var(--radius);
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+  }
+  
+  .nav-item-expanded {
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .nav-item-collapsed {
+    justify-content: center;
+  }
+  
+  .nav-item-active {
+    background-color: var(--white);
+    color: var(--blue-dark);
+    font-weight: 600;
+  }
+  
+  .nav-item-inactive {
+    color: var(--light-blue);
+  }
+  
+  .nav-item-inactive:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: var(--blue-main);
+  }
+  
+  .nav-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+  }
+  
+  .nav-label {
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  
+  /* Navigation Tooltip */
+  .nav-tooltip {
+    position: absolute;
+    left: 100%;
+    margin-left: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--pink-light);
+    color: var(--gray-dark);
+    font-size: 0.875rem;
+    border-radius: 0.375rem;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 50;
+    border: 1px solid var(--pink-dark);
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .nav-item:hover .nav-tooltip {
+    opacity: 1;
+  }
+  
+  /* Miko Logo Styles */
+  .miko-logo {
+    width: 2.2rem; /* Slightly smaller */
+    height: 2.2rem; /* Slightly smaller */
+    background: linear-gradient(135deg, var(--red-main) 0%, var(--red-dark) 100%);
+    border-radius: 10px; /* Slightly smaller radius */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--white);
+    box-shadow: 0 4px 12px rgba(228, 3, 44, 0.3);
+    flex-shrink: 0; /* Prevent logo from shrinking */
+  }
+  
+  .miko-icon {
+    color: var(--white);
+    font-family: 'Stick-A-Round W00 Stick-A-Round', sans-serif;
+    font-weight: 700;
+    font-size: 1rem; /* Slightly smaller */
+    line-height: 1;
+  }
+  
+  .miko-logo-small {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: linear-gradient(135deg, var(--red-main) 0%, var(--red-dark) 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--white);
+    margin-bottom: 0.25rem;
+  }
+  
+  .miko-icon-small {
+    color: var(--white);
+    font-family: 'Stick-A-Round W00 Stick-A-Round', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    line-height: 1;
+  }
+  
+  /* Manager Section */
+  .manager-section {
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    margin: auto 0;
+  }
+  
+  /* Manager Card */
+  .manager-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 1rem; /* Reduced from 1.25rem */
+    position: relative;
+    width: 100%;
+    box-shadow: 0 8px 32px rgba(228, 3, 44, 0.1);
+    border: 1px solid var(--pink-light);
+    transition: all 0.3s ease;
+    overflow: hidden; /* Prevent any overflow */
+  }
+
+  .pink-sidebar .manager-card {
+    top: -175px;
+  }
+  
+  
+  .manager-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(228, 3, 44, 0.15);
+  }
+  
+  .manager-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem; /* Reduced from 0.75rem */
+    margin-bottom: 0.8rem; /* Reduced from 1rem */
+    padding-bottom: 0.6rem; /* Reduced from 0.75rem */
+    border-bottom: 2px solid var(--pink-bg);
+  }
+  
+  .manager-info {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .manager-name {
+    font-size: 0.8rem; /* Slightly smaller */
+    font-weight: 700;
+    color: var(--red-dark);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: 'DejaVu Sans', sans-serif;
+  }
+  
+  .manager-role {
+    font-size: 0.7rem; /* Slightly smaller */
+    color: var(--blue-main);
+    font-weight: 600;
+    font-family: 'DejaVu Sans', sans-serif;
+  }
+  
+  /* Factory Status */
+  .factory-status {
+    padding-top: 0.75rem;
+  }
+  
+  .status-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem; /* Slightly reduced */
+  }
+  
+  .status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem; /* Reduced padding */
+    background: linear-gradient(135deg, var(--pink-bg) 0%, var(--white) 100%);
+    border-radius: 8px;
+    border-left: 3px solid var(--mint);
+  }
+  
+  .status-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    background: linear-gradient(135deg, var(--mint) 0%, #22c55e 100%);
+    border-radius: 50%;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(0, 215, 196, 0.7);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.1);
+      box-shadow: 0 0 0 5px rgba(0, 215, 196, 0);
+    }
+  }
+  
+  .status-text {
+    font-size: 0.75rem; /* Slightly smaller */
+    font-weight: 600;
+    color: var(--blue-dark);
+    font-family: 'DejaVu Sans', sans-serif;
+    line-height: 1.2;
+  }
+  
+  /* Production Stats Grid */
+  .production-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.3rem; /* Reduced from 0.5rem */
+    margin-top: 0.5rem;
+    padding: 0 0.1rem; /* Add small horizontal padding */
+  }
+  
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.3rem 0.2rem; /* Reduced padding */
+    background: var(--pink-bg);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    min-width: 0; /* Allow text to shrink */
+  }
+  
+  .stat-item:hover {
+    background: var(--pink-light);
+    transform: scale(1.05);
+  }
+  
+  .stat-number {
+    font-size: 0.8rem; /* Slightly smaller */
+    font-weight: 700;
+    color: var(--red-main);
+    font-family: 'Stick-A-Round W00 Stick-A-Round', sans-serif;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+  
+  .stat-label {
+    font-size: 0.55rem; /* Slightly smaller */
+    color: var(--blue-dark);
+    font-weight: 600;
+    margin-top: 0.1rem;
+    font-family: 'DejaVu Sans', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+  
+  /* Miko Signature */
+  .miko-signature {
+    font-size: 0.65rem; /* Slightly smaller */
+    color: var(--red-light);
+    text-align: center;
+    margin-top: 0.6rem; /* Reduced */
+    font-weight: 700;
+    font-family: 'Stick-A-Round W00 Stick-A-Round', sans-serif;
+    letter-spacing: 0.5px;
+    padding: 0.25rem; /* Reduced */
+    background: linear-gradient(135deg, transparent 0%, var(--pink-bg) 100%);
+    border-radius: 4px;
+  }
+  
+  /* Collapsed Manager Indicator */
+  .collapsed-manager-indicator {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 0.75rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(228, 3, 44, 0.1);
+    border: 1px solid var(--pink-light);
+    top: -165px;
+  }
+  
+  .collapsed-status-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    background: linear-gradient(135deg, var(--mint) 0%, #22c55e 100%);
+    border-radius: 50%;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Collapse Section */
+  .collapse-section {
+    padding: 0.75rem;
+    margin-top: auto;
+    border-top: 1px solid var(--pink-dark);
+  }
+  
+  .collapse-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.5rem;
+    color: var(--blue-dark);
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    font-family: 'DejaVu Sans', sans-serif;
+    font-weight: 700;
+  }
+  
+  .collapse-button:hover {
+    color: var(--blue-main);
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .collapse-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .collapse-text {
+    margin-left: 0.5rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    font-weight: 700;
+  }
