@@ -1,0 +1,240 @@
+/* =========================================================
+   🌍 UNILEVER THEME — Global App Styling
+   ========================================================= */
+
+/* Import Unilever font */
+@import url("https://db.onlinewebfonts.com/c/e9bf552d2dfd4e9893549776a564fa17?family=Unilever+Shilling");
+@import url("https://db.onlinewebfonts.com/c/5c8036fec9d614a90b202dbe1c3b8395?family=Stick-A-Round+W00Stick-A-Round");
+
+/* ---------------------------------------------------------
+   Brand Colors
+--------------------------------------------------------- */
+:root {
+  --blue-main: #005eff;
+  --blue-mid: #1f36c7;
+  --blue-dark: #001f82;
+  --light-blue: #7fbfff;
+  --yellow: #ffc000;
+  --mint: #00d7c4;
+  --background: #ffffff;
+  --foreground: #001f82;
+  --muted: #5e6cc4;
+  --border: #dbe3ff;
+  --radius: 0.75rem;
+  --shadow: 0 6px 20px rgba(0, 31, 130, 0.2);
+}
+
+/* ---------------------------------------------------------
+   Base Styles
+--------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Unilever Shilling", "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, var(--blue-main) 0%, var(--blue-dark) 100%);
+  color: var(--foreground);
+  min-height: 100vh;
+}
+
+/* ---------------------------------------------------------
+   Role Selection Page
+--------------------------------------------------------- */
+.role-selection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.role-container {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+/* ---------------------------------------------------------
+   Header
+--------------------------------------------------------- */
+.role-header {
+  margin-bottom: 3rem;
+}
+
+.app-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--yellow);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.app-subtitle {
+  font-size: 1.1rem;
+  color: var(--light-blue);
+}
+
+/* ---------------------------------------------------------
+   Cards Grid
+--------------------------------------------------------- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.shadcn-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--foreground);
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+}
+
+.shadcn-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+/* ---------------------------------------------------------
+   Card Content
+--------------------------------------------------------- */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.icon-container {
+  background: var(--light-blue);
+  border-radius: 50%;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.manager-card .icon-container {
+  background: var(--mint);
+}
+
+.operator-card .icon-container {
+  background: var(--light-blue);
+}
+
+.role-icon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--blue-dark);
+}
+
+.text-content {
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ---------------------------------------------------------
+   🔘 Buttons — Fixed Layout for Your JSX Structure
+--------------------------------------------------------- */
+.shadcn-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  line-height: 1;
+}
+
+.shadcn-button-primary {
+  background: var(--blue-main);
+  color: #fff;
+  border-color: var(--blue-dark);
+}
+
+.shadcn-button-primary:hover {
+  background: var(--blue-mid);
+  transform: translateY(-2px);
+}
+
+.shadcn-button-outline {
+  background: white;
+  color: var(--blue-dark);
+  border: 2px solid var(--blue-main);
+}
+
+.shadcn-button-outline:hover {
+  background: var(--blue-mid);
+  color: white;
+  border-color: var(--blue-dark);
+}
+
+/* Inner elements of the button (SVG + text) */
+.button-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+.button-text {
+  display: inline-block;
+}
+
+/* ---------------------------------------------------------
+   Footer
+--------------------------------------------------------- */
+.role-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1.5rem;
+}
+
+.footer-text {
+  font-size: 0.85rem;
+  color: var(--light-blue);
+}
+
+/* ---------------------------------------------------------
+   Responsive Design
+--------------------------------------------------------- */
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2.2rem;
+  }
+
+  .shadcn-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .role-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .shadcn-button {
+    width: 100%;
+  }
+}

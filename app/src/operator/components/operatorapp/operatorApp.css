@@ -1,0 +1,75 @@
+/* operatorApp.css - Complete File */
+
+/* ✅ Import Unilever official font */
+@import url('https://db.onlinewebfonts.com/c/e9bf552d2dfd4e9893549776a564fa17?family=Unilever+Shilling');
+@import url('https://db.onlinewebfonts.com/c/5c8036fec9d614a90b202dbe1c3b8395?family=Stick-A-Round+W00Stick-A-Round');
+
+/* 🌐 Color variables - REMOVE THESE as they're now in index.css */
+/* :root {
+  --blue-main: #005eff;
+  --blue-dark: #001f82;
+  --blue-light: #77ddf5;
+  --yellow: #ffc000;
+  --green: #008651;
+  --mint: #00d7c4;
+  --purple: #7705bc;
+  --pink: #fca6de;
+} */
+
+/* operatorApp.css - Miko Factory Theme for Operator App Only */
+
+.operator-app-wrapper {
+  font-family: "Stick-A-Round W00Stick-A-Round", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  /* Remove any background - let the Unilever blue show through */
+}
+
+/* Mobile-first container */
+.operator-app-container {
+  width: 100%;
+  max-width: 430px; /* Phone width */
+  min-height: 100vh;
+  background: var(--pink-bg); /* Keep pink background for the operator app */
+  position: relative;
+  margin: 0 auto;
+}
+
+/* Loading screen */
+.operator-loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--pink-bg); /* Use pink for loading screen */
+  color: var(--red-dark);
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Stick-A-Round W00Stick-A-Round", sans-serif;
+}
+
+/* For tablet sizes (600px and below), make it full width */
+@media (max-width: 600px) {
+  .operator-app-container {
+    max-width: 100%; /* Take full width on tablets */
+  }
+}
+
+/* For desktop (above 600px), center the phone layout */
+@media (min-width: 601px) {
+  .operator-app-wrapper {
+    padding: 20px 0;
+    align-items: center;
+    /* Unilever blue background will show around the pink container */
+  }
+  
+  .operator-app-container {
+    min-height: 90vh;
+    max-height: 90vh;
+    border-radius: 0; /* Remove border-radius for clean edges */
+    box-shadow: 0 0 20px rgba(0,0,0,0.1); /* Optional: subtle shadow */
+  }
+}

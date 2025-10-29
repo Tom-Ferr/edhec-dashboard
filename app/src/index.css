@@ -1,0 +1,99 @@
+@import url("https://db.onlinewebfonts.com/c/5c8036fec9d614a90b202dbe1c3b8395?family=Stick-A-Round+W00Stick-A-Round");
+@import url("https://db.onlinewebfonts.com/c/e9bf552d2dfd4e9893549776a564fa17?family=Unilever+Shilling");
+
+/* 🌍 GLOBAL THEME VARIABLES - Available app-wide but not applied globally */
+:root {
+  /* Miko Factory Colors - For Operator App Only */
+  --red-dark: #cd0125;
+  --red-main: #e4032c;
+  --red-light: #e7284a;
+  --pink-light: #f8d0d8;
+  --pink-bg: #fce8ec;
+  --pink-dark: #f4bcc6;
+  --beige: #f3e8d8;
+  
+  /* Unilever Legacy Colors (for compatibility) */
+  --blue-main: #005eff;
+  --blue-dark: #001f82;
+  --blue-mid: #1f36c7;
+  --light-blue: #77ddf5;
+  --yellow: #ffc000;
+  --mint: #00d7c4;
+  
+  /* Neutral Colors */
+  --white: #ffffff;
+  --gray-dark: #333;
+  --gray-light: #666;
+  --gray-lighter: #f5f5f5;
+  
+  /* UI Variables */
+  --radius: 0.75rem;
+  --shadow: 0 6px 20px rgba(0, 31, 130, 0.2);
+  --border: #dbe3ff;
+}
+
+/* Base Styles - Keep minimal, let components control their own styling */
+* {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+button {
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.min-h-screen { min-height: 100vh; }
+
+.p-4 { padding: 1rem; }
+.p-2 { padding: 0.5rem; }
+.m-4 { margin: 1rem; }
+.m-2 { margin: 0.5rem; }
+/* Smooth transitions for sidebar */
+.sidebar-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Ensure no horizontal scroll during transition */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Tooltip styling for collapsed menu items */
+.group:hover .tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
